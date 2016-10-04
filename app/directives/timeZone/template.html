@@ -1,0 +1,9 @@
+<h2 style="margin-left:10px;font-weight:bold;">Your time zone</h2>
+
+<h3 style="margin-left:8px;font-weight:normal;">All time will be displayed according to your timezone:</h3>
+
+<select name='timeZoneSelect' style="width:100%" ng-model="timeZoneSelect"  ng-change="submitTimeZone({selectedZone:timeZoneSelect})">
+	<option value=''>Please select</option>
+	<option ng-repeat="timezone in timeZoneArray" value="{{timezone.value}}">{{timezone.displayName}}
+	</option>
+</select>

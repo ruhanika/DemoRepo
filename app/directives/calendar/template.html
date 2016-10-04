@@ -1,0 +1,29 @@
+<div class="header">
+    <i class="fa fa-angle-left" ng-class="{'angle-left-dis':anglePrev}" ng-click="previous()" ng-disabled="anglePrev"></i>
+    <span>{{month.format("MMMM YYYY")}}</span>
+    <i class="fa fa-angle-right" ng-click="next()"></i>
+</div>
+<div class="week names">
+    <span class="day">Sun</span>
+    <span class="day">Mon</span>
+    <span class="day">Tue</span>
+    <span class="day">Wed</span>
+    <span class="day">Thu</span>
+    <span class="day">Fri</span>
+    <span class="day">Sat</span>
+</div>
+<div class="week" ng-repeat="week in weeks">
+    <span class="day" ng-class="{ today:day.isToday, 'different-month': !day.isCurrentMonth || day.isPastDay, selected: day.date.isSame(selected)
+
+     }" ng-click="selectCell({selectedDay:day})" ng-repeat="day in week.days" ng-disabled="checkDay(day)" >
+    <span ng-if="day.date.isSame(selected)">&#8226;</span>{{day.number}}</span>
+
+</div>
+
+<div class="header" >
+     <i class="fa fa-angle-left" style="float:left" ng-class="{'angle-left-dis':anglePrev}" ng-click="previous()" ng-disabled="anglePrev">
+    </i><p style="text-align:left" ng-class="{'leftAngletext':anglePrev}">{{previousMonth.format("MMMM YYYY")}}</p>
+     <i class="fa fa-angle-right" style="float:right" ng-click="next()">
+     </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="text-align:right" >{{nextMonth.format("MMMM YYYY")}}</p>
+
+</div>

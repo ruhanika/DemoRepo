@@ -1,0 +1,13 @@
+
+        <div class="row" ng-show="calendarDiv">     
+        <div class="col-md-3">&nbsp;</div>     
+            <div class="col-md-9" >
+                <div class="col-md-5">
+                    <calendar select-cell="clickDateCell(selectedDay)" selected="selected" offset="offset"></calendar>
+                    <p>{{offset}}</p>
+                </div>
+                <div class="col-md-4" ng-show="timeSlot">
+                    <time-slot-directive checked-slot="clickTimeSlot(slotcell)"></time-slot-directive>
+                </div>
+            </div>          
+        </div>   
